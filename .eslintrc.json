@@ -1,0 +1,101 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["jest", "@typescript-eslint"],
+  "rules": {
+    "@typescript-eslint/no-shadow": "error",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "[iI]gnored$"
+      }
+    ],
+    "no-inline-comments": 0,
+    "prefer-destructuring": 2,
+    "prefer-object-spread": 2,
+    "prefer-template": 2,
+    "radix": 2,
+    "react/boolean-prop-naming": 2,
+    "react/hook-use-state": 2,
+    "react/jsx-closing-bracket-location": [1, "tag-aligned"],
+    "react/jsx-curly-brace-presence": [
+      2,
+      {
+        "props": "never",
+        "children": "never",
+        "propElementValues": "always"
+      }
+    ],
+    "react/jsx-no-useless-fragment": 2,
+    "react/no-typos": 2,
+    "react/no-unused-prop-types": 2,
+    "react/no-unused-state": 2,
+    "react/self-closing-comp": 2,
+    "react/sort-comp": [
+      1,
+      {
+        "order": [
+          "static-variables",
+          "propTypes",
+          "static-methods",
+          "state",
+          "lifecycle",
+          "everything-else",
+          "/^(on|handle).+$/",
+          "/^render.+$/",
+          "render"
+        ]
+      }
+    ],
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/sort-prop-types": 2,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "~~~ disabled rules covered by tslint ~~~": 0,
+    "no-empty-function": 0,
+    "no-duplicate-imports": 0,
+    "no-shadow": 0,
+    "no-unused-vars": 0
+  },
+  "overrides": [
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {
+        "import/no-named-as-default-member": 0,
+        "react/prop-types": 1
+      }
+    }
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "typescript": {
+        "project": "./tsconfig.json"
+      },
+      "node": true
+    }
+  }
+}
